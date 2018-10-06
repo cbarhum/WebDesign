@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> CSS</title>
+
+
+    <style>
+        a:before{
+            content: '>>>';
+        }
+        a:after{
+            content: ']';
+        }
+        /*a:after{
+            content: '(externo)';
+        }*/
+        .email-address:before{
+            content: "meu endereço é:";
+        }
+        ol{
+            list-style: none;
+            counter-reset: contador;
+        }
+
+        li:before{
+            content: "link " counter(contador) " ";
+            counter-increment: contador;
+        }
+
+        :lang(en) > q{quotes: '{' '}'}
+        :lang(no) >q{quotes: '@' '%';}
+
+        q:before {content: open-quote;}
+        q:after {content: close-quote;}
+        
+    </style>
+</head>
+<body>
+        <h1>pseudo elemento</h1>
+        <a href='#'>Texto 01</a>
+        <a href='#'>Texto 02</a>
+        <a href='#'>Texto 03</a>
+        <a href='#'>Texto 04</a>
+        <br>
+        <ul>
+        <a href='http://uol.com.br'>uol</a>
+        </ul>
+        <hr>
+        <ul>
+            <li clas='email-address'>carolbarhum@hotmail.com</li>
+        </ul>
+        <ol>
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+            <li>E</li>
+        </ol>
+        <hr>
+        <p lang='en'><q>in the sha shalowww</q></p>
+        <p lang='no'><q>and my heart beats so that i can hardly speak</q></p>
+</body>
+</html>
